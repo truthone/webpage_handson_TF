@@ -8,7 +8,7 @@ export const promotions = [
         discountPrice: 8000,
         productId: "p1",
         imageUrl: "https://media.graphassets.com/TTUhaiT0lsmx7eon1PAZ",
-        link: "./apple.html",
+        link: "./page/detail.html",
       },
       {
         productName: "피크닉 바구니 (레드 체크 식탁보 포함)",
