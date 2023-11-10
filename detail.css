@@ -65,8 +65,11 @@ header {
 
 #detail {
   width: 100%;
-  height: 5000px;
-  background-color: #3498db;
+  height: 4000px;
+}
+
+#detail > img {
+  object-fit: cover;
 }
 
 #util {
