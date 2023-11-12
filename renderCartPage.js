@@ -2,10 +2,15 @@ let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 document.addEventListener('DOMContentLoaded', () => {
   renderCartItems();
-  document.addEventListener('click', (e) => {
-    removeFromCart(e.target.dataset.id);
-  })
 });
+
+document.querySelector('#cart').addEventListener('click', (e) => {
+  removeFromCart(e.target.dataset.id);
+})
+
+document.getElementById('logo').addEventListener('click', () => {
+window.location.href = './index.html'
+})
 
 function renderCartItems() {
   const cartItemsElement = document.getElementById('cart-items');
