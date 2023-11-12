@@ -5,6 +5,14 @@ document.addEventListener("DOMContentLoaded", () => {
   renderProducts(promotions);
 });
 
+document.getElementById('button-cart').addEventListener('click', () => {
+  window.location.href = './cart.html'
+})
+
+document.getElementById('logo').addEventListener('click', () => {
+  window.location.href = './index.html'
+})
+
 function createProductCard(product) {
   return `
   <div class="item" id="${product.productId}">
@@ -20,9 +28,7 @@ function createProductCard(product) {
           </div>
       </div>
       <button>
-          <span class="icon material-symbols-rounded button-add-cart"
-              onclick="addToCart('${product.productName}')">add_Circle
-          </span>
+          <span class="icon material-symbols-rounded button-add-cart">add_Circle</span>
       </button>
     </div>
   </div>
@@ -55,7 +61,7 @@ function renderProducts(promotions) {
 
     const result = promotions[i].products
       .map((product) => {
-        return `<div class="item" id="${product.productId}">
+        return `<div class="item">
             <img class="item-thumbnail" src="${
               product.imageUrl
             }" alt="상품썸네일이미지" />
@@ -69,10 +75,8 @@ function renderProducts(promotions) {
                     <p class="saled-price">${product.discountPrice.toLocaleString()}원</p>
                   </div>
               </div>
-              <button>
-                  <span class="icon material-symbols-rounded button-add-cart"
-                      onclick="addToCart('${product.productName}')">add_Circle
-                  </span>
+              <button data-id="${product.productId}">
+                  <span class="icon material-symbols-rounded button-add-cart">add_Circle</span>
               </button>
             </div>
           </div>`;
