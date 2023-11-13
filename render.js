@@ -5,14 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
   renderProducts(promotions);
 });
 
-document.getElementById('logo').addEventListener('click', () => {
-  window.location.href = './index.html'
-})
-
-document.getElementById('button-cart').addEventListener('click', () => {
-  window.location.href = './cart.html'
-})
-
 function renderPromotions(promotions) {
   const mainTag = document.getElementsByTagName("main")[0];
 
