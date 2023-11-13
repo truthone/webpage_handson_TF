@@ -4,6 +4,10 @@ article {
   width: 100%;
 }
 
+.button-add-cart {
+  color: rgb(30, 71, 241);
+}
+
 .brand-logo {
   grid-area: brand-logo;
 }

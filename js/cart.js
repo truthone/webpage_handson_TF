@@ -37,4 +37,5 @@ function addToCart(productId) {
 
 function saveCart() {
   localStorage.setItem("cart", JSON.stringify(cart));
+  alert("장바구니에 추가되었습니다!");
 }
