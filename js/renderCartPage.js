@@ -2,6 +2,9 @@ let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 document.addEventListener("DOMContentLoaded", () => {
   renderCartItems();
+  document.addEventListener("click", (e) => {
+    removeFromCart(e.target.dataset.id);
+  });
 });
 
 function renderCartItems() {
@@ -20,7 +23,7 @@ function renderCartItems() {
       <td>${item.price * item.quantity}원</td>
       <td><button id='remove-button' data-id="${
         item.productId
-      }">Remove</button></td>
+      }">삭제</button></td>
     `;
     sum += item.price;
     amount += item.quantity;
@@ -32,11 +35,7 @@ function renderCartItems() {
 
 function removeFromCart(productId) {
   const productIndex = cart.findIndex((p) => p.productId === productId);
-  if (cart[productIndex].quantity > 1) {
-    cart[productIndex].quantity -= 1;
-  } else {
-    cart.splice(productIndex, 1);
-  }
+  cart.splice(productIndex, 1);
   saveCart();
   renderCartItems();
 }
@@ -46,6 +45,6 @@ function saveCart() {
 }
 
 function renderSum(sum, amount) {
-  document.getElementById("amount").innerHTML += amount;
-  document.getElementById("sum").innerHTML += sum;
+  document.getElementById("amount").innerHTML = `총 수량: ${amount}`;
+  document.getElementById("sum").innerHTML = `총 합계: ${sum * amount}`;
 }
