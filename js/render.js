@@ -44,10 +44,8 @@ function renderProducts(promotions) {
                     <p class="saled-price">${product.discountPrice.toLocaleString()}원</p>
                   </div>
               </div>
-              <button>
-                  <span class="icon material-symbols-rounded button-add-cart"
-                      onclick="addToCart('${product.productName}')">add_Circle
-                  </span>
+              <button data-id="${product.productId}">
+                  <span class="icon material-symbols-rounded button-add-cart">add_Circle</span>
               </button>
             </div>
           </div>`;
