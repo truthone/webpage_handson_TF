@@ -3,7 +3,6 @@ import { promotions } from "./data.js";
 document.addEventListener("DOMContentLoaded", function () {
   const container = document.querySelector("main");
   container.addEventListener("click", (e) => {
-    // 'Add to Cart' 버튼 클릭 여부 확인
     if (e.target.matches(".button-add-cart")) {
       const itemId = e.target.parentElement.dataset.id;
       if (itemId) {
@@ -21,8 +20,6 @@ promotions.forEach((p) => {
     productList.push(p);
   });
 });
-
-console.log(productList);
 
 function addToCart(productId) {
   const product = productList.find((p) => p.productId === productId);

@@ -7,6 +7,7 @@
     <title>OPEN MARKET</title>
     <link rel="stylesheet" href="../style/global.css" />
     <link rel="stylesheet" href="../style/index.css" />
+    <link rel="stylesheet" href="../style/cart.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
@@ -30,22 +31,24 @@
     </div>
     <main>
       <section id="cart">
-        <!-- cart.html -->
         <table id="cart-table">
           <thead>
             <tr>
-              <th>Image</th>
-              <th>Name</th>
-              <th>Price</th>
-              <th>Quantity</th>
-              <th>Total</th>
-              <th>Remove</th>
+              <th>이미지</th>
+              <th>상품명</th>
+              <th>가격</th>
+              <th>수량</th>
+              <th>총 가격</th>
+              <th></th>
             </tr>
           </thead>
-          <tbody id="cart-items">
-            <!-- 여기에 장바구니 아이템들이 들어감 -->
-          </tbody>
+          <tbody id="cart-items"></tbody>
         </table>
+      </section>
+      <section id="summary">
+        <span id="amount">총 수량: </span><span>개</span>
+        <span>/</span>
+        <span id="sum">총 합계: </span><span>원</span>
       </section>
     </main>
     <footer>
@@ -55,5 +58,6 @@
       </p>
     </footer>
     <script type="module" src="../js/renderCartPage.js"></script>
+    <script type="module" src="../js/header.js"></script>
   </body>
 </html>
