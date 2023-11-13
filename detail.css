@@ -112,7 +112,7 @@ header {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(195, 225, 0, 0.5);
+  background: rgba(170, 170, 170, 0.5);
   color: #4d4d4d;
   border: none;
   padding: 15px 20px;
