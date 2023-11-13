@@ -48,10 +48,12 @@ header {
   font-size: 30px;
   margin: 15px;
   padding: 20px;
+  font-weight: bold;
 }
 
 .buy-button:hover {
   background-color: rgb(195, 225, 0);
+  color: rgb(0, 0, 0);
 }
 
 .flex-row {
@@ -67,7 +69,8 @@ header {
 }
 
 #detail > img {
-  object-fit: cover;
+  object-fit: fill;
+  height: fit-content;
 }
 
 #util {
