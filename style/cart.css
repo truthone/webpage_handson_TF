@@ -4,7 +4,6 @@
   border-collapse: collapse;
   word-break: keep-all;
   margin: 20px 0;
-  font-size: 30px;
   min-width: 400px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   background-color: rgb(254, 231, 93);
@@ -31,7 +30,7 @@
 #cart-table th,
 #cart-table td {
   padding: 12px 15px;
-  font-size: 20px;
+  font-size: 30px;
 }
 
 /* 테이블 바디 행 스타일 */

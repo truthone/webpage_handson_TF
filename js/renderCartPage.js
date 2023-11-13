@@ -2,9 +2,11 @@ let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 document.addEventListener("DOMContentLoaded", () => {
   renderCartItems();
-  document.addEventListener("click", (e) => {
-    removeFromCart(e.target.dataset.id);
-  });
+});
+
+document.addEventListener("click", (e) => {
+  console.log(e.target.dataset.id);
+  removeFromCart(e.target.dataset.id);
 });
 
 function renderCartItems() {
@@ -23,7 +25,7 @@ function renderCartItems() {
       <td>${item.price * item.quantity}원</td>
       <td><button id='remove-button' data-id="${
         item.productId
-      }">삭제</button></td>
+      }" onclick="removeFromCart(${item.productId})">삭제</button></td>
     `;
     sum += item.price;
     amount += item.quantity;
