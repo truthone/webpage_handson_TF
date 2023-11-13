@@ -20,9 +20,13 @@ article {
   grid-area: item4;
 }
 
+#menu > .icon {
+  color: rgb(255, 255, 255);
+}
+
 .grid {
   width: 100%;
-  border: 1px solid black;
+  border: 1px solid rgb(255, 91, 203);
   border-right: none;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -31,8 +35,8 @@ article {
 }
 
 .section-title {
-  background-color: #040005;
-  color: rgb(195, 255, 0);
+  background-color: rgb(255, 91, 203);
+  color: rgb(254, 231, 93);
   margin-top: 60px;
   margin-bottom: 0px;
   padding: 14px;
@@ -41,7 +45,7 @@ article {
 
 .item-thumbnail {
   grid-area: item-thumbnail;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgb(255, 91, 203);
   background-position: center;
   background-size: cover;
 }
@@ -63,7 +67,7 @@ article {
 }
 
 .item {
-  border-right: 1px solid black;
+  border-right: 1px solid rgb(255, 91, 203);
   display: grid;
   grid-template-rows: 4fr 1fr;
   grid-template-areas:
