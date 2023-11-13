@@ -104,9 +104,9 @@
   background: rgba(170, 170, 170, 0.5);
   color: #4d4d4d;
   border: none;
-  padding: 15px 20px;
+  padding: 10px 15px;
   cursor: pointer;
-  font-size: 40px;
+  font-size: 30px;
 }
 
 .carousel-btn.prev {

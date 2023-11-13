@@ -73,9 +73,8 @@ article {
 
 .item-name {
   margin: 10px 10px 5px 10px;
-  font-family: "Pretendard-Regular";
   font-weight: bold;
-  font-size: 16px;
+  font-size: 25px;
 }
 
 a:hover {
@@ -91,11 +90,13 @@ a:hover {
   display: inline;
   margin: 0px 0px 10px 10px;
   text-decoration: 1px solid rgb(253, 89, 13) line-through;
+  font-size: 25px;
 }
 
 .saled-price {
   display: inline;
   color: rgb(253, 89, 13);
+  font-size: 25px;
 }
 
 /* footer */
