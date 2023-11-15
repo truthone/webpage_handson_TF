@@ -31,9 +31,11 @@ function renderProducts(promotions) {
     const result = promotions[i].products
       .map((product) => {
         return `<div class="item" data-id="${product.productId}">
-            <img class="item-thumbnail" src="${
-              product.imageUrl
-            }" alt="상품썸네일이미지" />
+        <figure>
+          <img class="item-thumbnail" src="${product.imageUrl}" alt="${
+          product.productName
+        } 상품 이미지">
+        </figure>
             <div class="flex-between">
               <div class="item-info">
                   <a href="${product.link}" class="item-name">${
@@ -44,9 +46,11 @@ function renderProducts(promotions) {
                     <p class="saled-price">${product.discountPrice.toLocaleString()}원</p>
                   </div>
               </div>
-              <button data-id="${product.productId}">
-                  <span class="icon material-symbols-rounded button-add-cart">add_Circle</span>
-              </button>
+              <button aria-label="${
+                product.productName
+              } 상품 추가 버튼" data-id="${product.productId}">
+              <span class="icon material-symbols-rounded button-add-cart">add_Circle</span>
+            </button>
             </div>
           </div>`;
       })
