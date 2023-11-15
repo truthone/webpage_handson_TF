@@ -30,7 +30,7 @@ article {
 
 .grid {
   width: 100%;
-  border: 1px solid rgb(255, 91, 203);
+  border: 1px solid rgb(30, 71, 241);
   border-right: none;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -39,8 +39,8 @@ article {
 }
 
 .section-title {
-  background-color: rgb(255, 91, 203);
-  color: rgb(254, 231, 93);
+  background-color: rgb(30, 71, 241);
+  color: rgb(255, 217, 0);
   margin-top: 60px;
   margin-bottom: 0px;
   padding: 14px;
@@ -49,7 +49,7 @@ article {
 
 .item-thumbnail {
   grid-area: item-thumbnail;
-  border-bottom: 1px solid rgb(255, 91, 203);
+  border-bottom: 1px solid rgb(30, 71, 241);
   background-position: center;
   background-size: cover;
 }
@@ -71,7 +71,7 @@ article {
 }
 
 .item {
-  border-right: 1px solid rgb(255, 91, 203);
+  border-right: 1px solid rgb(30, 71, 241);
   display: grid;
   grid-template-rows: 400px 1fr;
   grid-template-areas:
@@ -81,7 +81,6 @@ article {
 
 .item-name {
   margin: 10px 10px 5px 10px;
-  font-weight: bold;
   font-size: 25px;
 }
 
@@ -105,21 +104,6 @@ a:hover {
   display: inline;
   color: rgb(253, 89, 13);
   font-size: 25px;
-}
-
-/* footer */
-
-footer {
-  border-top: 1px solid rgb(230, 230, 230);
-  margin-top: 30px;
-}
-
-.footnote {
-  color: rgb(184, 184, 184);
-  text-align: center;
-  margin: 15px 0px;
-  font-size: 12px;
-  line-height: 150%;
 }
 
 /*Media Query*/

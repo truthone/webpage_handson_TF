@@ -14,7 +14,7 @@ body {
   font-family: "Do Hyeon", sans-serif;
   font-size: 14px;
   max-width: 1440px;
-  background: content-box radial-gradient(rgb(255, 91, 203), rgb(254, 231, 93));
+  word-break: keep-all;
 }
 
 a {
@@ -76,4 +76,19 @@ header {
 
 .icon:hover {
   font-weight: 900;
+}
+
+/* footer */
+
+footer {
+  border-top: 1px solid rgb(230, 230, 230);
+  margin-top: 30px;
+}
+
+.footnote {
+  color: rgb(184, 184, 184);
+  text-align: center;
+  margin: 15px 0px;
+  font-size: 12px;
+  line-height: 150%;
 }
