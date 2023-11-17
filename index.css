@@ -129,11 +129,21 @@ figure {
   .icon {
     font-size: 20px;
   }
+
+  .item-thumbnail:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
 }
 
-@media all and (max-width: 425px) {
+@media all and (max-width: 426px) {
   #menu > .icon,
   .icon {
     font-size: 20px;
+  }
+
+  .item-thumbnail:hover {
+    transform: scale(1.05);
+    cursor: pointer;
   }
 }
