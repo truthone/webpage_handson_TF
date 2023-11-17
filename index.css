@@ -4,7 +4,7 @@ article {
   width: 100%;
 }
 
-.button-add-cart {
+.icon-add-cart {
   color: rgb(244, 80, 80);
 }
 
@@ -12,7 +12,7 @@ article {
   grid-area: brand-logo;
 }
 
-#menu > .icon {
+.icon-nav {
   color: rgb(255, 255, 255);
 }
 
@@ -89,6 +89,11 @@ figure {
 }
 
 @media all and (max-width: 800px) {
+  body,
+  main {
+    margin: 0;
+  }
+
   header {
     display: flex;
     flex-direction: row;
@@ -102,19 +107,17 @@ figure {
   #logo {
     font-size: 20px;
   }
+
   ul {
     font-size: 16px;
   }
+
   h1 {
     font-size: 24px;
   }
-  body,
-  main {
-    margin: 0;
-  }
 
-  #menu > .icon,
-  .icon {
+  .icon-nav,
+  .icon-add-cart {
     font-size: 20px;
   }
 
@@ -125,8 +128,8 @@ figure {
 }
 
 @media all and (max-width: 426px) {
-  #menu > .icon,
-  .icon {
+  .icon-nav,
+  .icon-add-cart {
     font-size: 20px;
   }
 
