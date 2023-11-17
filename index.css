@@ -28,16 +28,6 @@ article {
   color: rgb(255, 255, 255);
 }
 
-.grid {
-  width: 100%;
-  border: 1px solid rgb(30, 71, 241);
-  border-right: none;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-areas: "item1 item2 item3 item4";
-  margin: 0px 0px 20px 0px;
-}
-
 .section-title {
   background-color: rgb(30, 71, 241);
   color: rgb(255, 217, 0);
@@ -45,13 +35,6 @@ article {
   margin-bottom: 0px;
   padding: 14px;
   font-size: 40px;
-}
-
-.item-thumbnail {
-  grid-area: item-thumbnail;
-  border-bottom: 1px solid rgb(30, 71, 241);
-  background-position: center;
-  background-size: cover;
 }
 
 .item-thumbnail:hover {
@@ -68,15 +51,6 @@ article {
   justify-content: flex-start;
   align-items: flex-start;
   grid-area: item-info;
-}
-
-.item {
-  border-right: 1px solid rgb(30, 71, 241);
-  display: grid;
-  grid-template-rows: 400px 1fr;
-  grid-template-areas:
-    "item-thumbnail"
-    "item-info";
 }
 
 .item-name {
@@ -104,14 +78,6 @@ a:hover {
   display: inline;
   color: rgb(253, 89, 13);
   font-size: 25px;
-}
-
-.flex-between {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  margin: 10px;
 }
 
 button {
@@ -145,19 +111,6 @@ figure {
     text-align: center;
   }
 
-  .grid {
-    border: 1px solid black;
-    border-right: none;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas:
-      "item1 item2"
-      "item3 item4";
-    margin: 0px 0px 20px 0px;
-  }
-
   #logo {
     font-size: 20px;
   }
@@ -173,22 +126,5 @@ figure {
   }
   #menu > .icon {
     font-size: 14px;
-  }
-}
-
-@media all and (max-width: 425px) {
-  .grid {
-    border: 1px solid black;
-    border-right: none;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-template-areas:
-      "item1"
-      "item2"
-      "item3"
-      "item4";
-    margin: 0px 0px 20px 0px;
   }
 }
