@@ -75,8 +75,8 @@
   <header class="sticky">
     <div id="logo">💖어메이징마켓💖</div>
     <nav id="menu">
-      <button class="icon-nav material-symbols-rounded" id="button-cart">shopping_cart_checkout</button>
-      <button class="icon-nav material-symbols-rounded">person</button>
+      <button class="icon icon-nav material-symbols-rounded" id="button-cart">shopping_cart_checkout</button>
+      <button class="icon icon-nav material-symbols-rounded">person</button>
     </div>
   </header>
   <main>
@@ -90,8 +90,6 @@
   </footer>
   <script src="./header.js"></script>
   <script>
-
-    // 데이터
     const promotions = [
     {
         sectionTitle: "[푸드] 건강하고 맛있는 식재료🥝",
@@ -235,7 +233,6 @@
       renderProducts(mainTag, promotions);
     });
     
-    // 마크업 생성
     function renderPromotions(mainTag, promotions) {
       const result = promotions
         .map((promotion) => {
@@ -281,7 +278,7 @@
         </div>
         <button aria-label="${product.productName} 상품 추가 버튼"
           data-id="${product.productId}">
-          <span class="icon material-symbols-rounded button-add-cart">add_Circle</span>
+          <span class="icon icon-add-cart material-symbols-rounded button-add-cart">add_Circle</span>
         </button>
         </div>
       </div>`;
