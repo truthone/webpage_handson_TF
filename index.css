@@ -124,7 +124,16 @@ figure {
   main {
     margin: 0;
   }
-  #menu > .icon {
-    font-size: 14px;
+
+  #menu > .icon,
+  .icon {
+    font-size: 20px;
+  }
+}
+
+@media all and (max-width: 425px) {
+  #menu > .icon,
+  .icon {
+    font-size: 20px;
   }
 }
