@@ -14,7 +14,7 @@
   <style>
     .grid {
       width: 100%;
-      border: 1px solid rgb(30, 71, 241);
+      border: 1px solid rgb(60, 72, 107);
       border-right: none;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -23,7 +23,7 @@
     }
 
     .item {
-      border-right: 1px solid rgb(30, 71, 241);
+      border-right: 1px solid rgb(60, 72, 107);
       display: grid;
       grid-template-rows: 400px 1fr;
       grid-template-areas:
@@ -33,7 +33,7 @@
 
     .item-thumbnail {
       grid-area: item-thumbnail;
-      border-bottom: 1px solid rgb(30, 71, 241);
+      border-bottom: 1px solid rgb(60, 72, 107);
       background-position: center;
       background-size: cover;
     }
@@ -58,7 +58,7 @@
       }
 
       .grid {
-        border: 1px solid black;
+        border: 1px solid rgb(249, 217, 73);
         border-right: none;
         width: 100%;
         display: grid;
@@ -73,7 +73,7 @@
 
     @media all and (max-width: 425px) {
       .grid {
-        border: 1px solid black;
+        border: 1px solid rgb(249, 217, 73);
         border-right: none;
         width: 100%;
         display: grid;
@@ -100,7 +100,7 @@
   </header>
   <main>
     <article>
-      <img src="https://media.graphassets.com/b1QQcAIxQfi4Smc8fv80"  alt="메인 배너"/>
+      <img src="https://media.graphassets.com/1VNPaRMKQH6XD3hQT9Fd"  alt="메인 배너"/>
     </article>
   </main>
   <footer>
@@ -129,7 +129,7 @@
         })
         .join("");
     
-      mainTag.innerHTML = result;
+      mainTag.innerHTML += result;
     }
     
     function renderProducts(mainTag, promotions) {
