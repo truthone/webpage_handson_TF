@@ -1,6 +1,6 @@
 const carousel = document.querySelector(".carousel");
-const btnPrev = document.querySelector(".carousel-btn.prev");
-const btnNext = document.querySelector(".carousel-btn.next");
+const btnPrev = document.querySelector(".carousel-button.prev");
+const btnNext = document.querySelector(".carousel-button.next");
 
 let currentIndex = 0;
 const lastIndex = 2;

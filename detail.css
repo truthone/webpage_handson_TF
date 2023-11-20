@@ -111,7 +111,7 @@ header {
   height: inherit;
 }
 
-.carousel-btn {
+.carousel-button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -123,11 +123,11 @@ header {
   font-size: 40px;
 }
 
-.carousel-btn.prev {
+.carousel-button.prev {
   left: 0;
 }
 
-.carousel-btn.next {
+.carousel-button.next {
   right: 0;
 }
 
@@ -151,7 +151,7 @@ header {
     align-items: center;
   }
 
-  #detail-description {
+  .detail-description {
     height: fit-content;
   }
 
