@@ -11,6 +11,49 @@
     <link rel="stylesheet" href="./global.css" />
     <link rel="stylesheet" href="./detail.css" />
     <link rel="stylesheet" href="./index.css" />
+    <style>
+      .carousel-container {
+        position: relative;
+        max-width: 500px;
+        min-width: 300px;
+        height: auto;
+      }
+
+      .carousel {
+        display: flex;
+        overflow-x: hidden;
+        scroll-snap-type: x mandatory;
+        white-space: nowrap;
+        width: 100%;
+      }
+
+      .carousel img {
+        flex: 0 0 auto;
+        scroll-snap-align: start;
+        object-fit: cover;
+        height: inherit;
+      }
+
+      .carousel-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(240, 240, 240, 0.5);
+        color: rgb(60, 72, 107);
+        border: none;
+        padding: 15px 20px;
+        cursor: pointer;
+        font-size: 40px;
+      }
+
+      .carousel-button.prev {
+        left: 0;
+      }
+
+      .carousel-button.next {
+        right: 0;
+      }
+    </style>
   </head>
 
   <body>
@@ -61,7 +104,65 @@
         OPENMARKET ⓒ 2023<br />대표번호 02-0000-0000 대표이메일
         ulift@ulift.kr<br />All Photos by Unsplash
     </footer>
-    <script src="./carousel.js"></script>
+    <script>
+      const carousel = document.querySelector(".carousel");
+      const btnPrev = document.querySelector(".carousel-button.prev");
+      const btnNext = document.querySelector(".carousel-button.next");
+      
+      let currentIndex = 0;
+      const lastIndex = 2;
+      let isThrottled = false;
+      const THROTTLE_DURATION = 500;
+      
+      document.addEventListener("DOMContentLoaded", () => {
+        setVisibilityOfSlideButtons(currentIndex);
+      });
+      
+      btnPrev.addEventListener("click", () => {
+        if (isThrottled) return;
+        isThrottled = true;
+      
+        carousel.scrollBy({
+          left: -carousel.clientWidth,
+          behavior: "smooth",
+        });
+        currentIndex--;
+        setVisibilityOfSlideButtons(currentIndex);
+      
+        setTimeout(() => {
+          isThrottled = false;
+        }, THROTTLE_DURATION);
+      });
+      
+      btnNext.addEventListener("click", () => {
+        if (isThrottled) return;
+        isThrottled = true;
+      
+        carousel.scrollBy({
+          left: carousel.clientWidth,
+          behavior: "smooth",
+        });
+        currentIndex++;
+        setVisibilityOfSlideButtons(currentIndex);
+      
+        setTimeout(() => {
+          isThrottled = false;
+        }, THROTTLE_DURATION);
+      });
+      
+      function setVisibilityOfSlideButtons(currentIndex) {
+        if (currentIndex === 0) {
+          btnPrev.style.display = "none";
+          btnNext.style.display = "block";
+        } else if (currentIndex === 1) {
+          btnPrev.style.display = "block";
+          btnNext.style.display = "block";
+        } else {
+          btnPrev.style.display = "block";
+          btnNext.style.display = "none";
+        }
+      }
+      </script>
     <script src="./header.js"></script>
   </body>
 

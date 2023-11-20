@@ -87,50 +87,6 @@ header {
   font-size: 50px;
 }
 
-/* 캐러셀  */
-
-.carousel-container {
-  position: relative;
-  max-width: 500px;
-  min-width: 300px;
-  height: auto;
-}
-
-.carousel {
-  display: flex;
-  overflow-x: hidden;
-  scroll-snap-type: x mandatory;
-  white-space: nowrap;
-  width: 100%;
-}
-
-.carousel img {
-  flex: 0 0 auto;
-  scroll-snap-align: start;
-  object-fit: cover;
-  height: inherit;
-}
-
-.carousel-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(240, 240, 240, 0.5);
-  color: rgb(60, 72, 107);
-  border: none;
-  padding: 15px 20px;
-  cursor: pointer;
-  font-size: 40px;
-}
-
-.carousel-button.prev {
-  left: 0;
-}
-
-.carousel-button.next {
-  right: 0;
-}
-
 /* media Query */
 @media all and (max-width: 800px) {
   .container {
