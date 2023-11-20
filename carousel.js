@@ -5,10 +5,10 @@ const btnNext = document.querySelector(".carousel-btn.next");
 let currentIndex = 0;
 const lastIndex = 2;
 let isThrottled = false;
-const throttleDuration = 500;
+const THROTTLE_DURATION = 500;
 
 document.addEventListener("DOMContentLoaded", () => {
-  visibilitySlideButtons(currentIndex);
+  setVisibilityOfSlideButtons(currentIndex);
 });
 
 btnPrev.addEventListener("click", () => {
@@ -20,11 +20,11 @@ btnPrev.addEventListener("click", () => {
     behavior: "smooth",
   });
   currentIndex--;
-  visibilitySlideButtons(currentIndex);
+  setVisibilityOfSlideButtons(currentIndex);
 
   setTimeout(() => {
     isThrottled = false;
-  }, throttleDuration);
+  }, THROTTLE_DURATION);
 });
 
 btnNext.addEventListener("click", () => {
@@ -36,14 +36,14 @@ btnNext.addEventListener("click", () => {
     behavior: "smooth",
   });
   currentIndex++;
-  visibilitySlideButtons(currentIndex);
+  setVisibilityOfSlideButtons(currentIndex);
 
   setTimeout(() => {
     isThrottled = false;
   }, throttleDuration);
 });
 
-function visibilitySlideButtons(currentIndex) {
+function setVisibilityOfSlideButtons(currentIndex) {
   if (currentIndex === 0) {
     btnPrev.style.display = "none";
     btnNext.style.display = "block";
