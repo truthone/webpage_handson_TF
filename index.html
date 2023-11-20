@@ -247,14 +247,14 @@
         const result = promotions
           .map((promotion) => {
             return `
-      <section>
-        <h1 class="section-title">${promotion.sectionTitle}</h1>
-        <div class="productContainer grid">
-        </div>
-      </section>
-      `;
+            <section>
+                <h1 class="section-title">${promotion.sectionTitle}</h1>
+                <div class="productContainer grid">
+                </div>
+              </section>
+            `;
           })
-          .join("\n");
+          .join("");
 
         mainTag.innerHTML += result;
       }
@@ -266,11 +266,9 @@
           const productContainer = productContainers[index];
           const productsMarkup = promotion.products
             .map((product) => createProductMarkup(product))
-            .join("\n");
+            .join("");
           productContainer.innerHTML = productsMarkup;
         });
-
-        console.log(mainTag.innerHTML);
       }
 
       function createProductMarkup(product) {
@@ -297,7 +295,7 @@
               </button>
             </div>
           </div>
-      `;
+        `;
       }
     </script>
   </body>
