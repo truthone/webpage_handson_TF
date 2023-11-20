@@ -40,7 +40,7 @@ btnNext.addEventListener("click", () => {
 
   setTimeout(() => {
     isThrottled = false;
-  }, throttleDuration);
+  }, THROTTLE_DURATION);
 });
 
 function setVisibilityOfSlideButtons(currentIndex) {
