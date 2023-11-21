@@ -145,14 +145,14 @@ function renderPromotions(mainTag, promotions) {
   const result = promotions
     .map((promotion) => {
       return `
-<section>
-  <h1 class="section-title">${promotion.sectionTitle}</h1>
-  <div class="productContainer grid">
-  </div>
-</section>
-`;
+      <section>
+          <h1 class="section-title">${promotion.sectionTitle}</h1>
+          <div class="productContainer grid">
+          </div>
+        </section>
+      `;
     })
-    .join("\n");
+    .join("");
 
   mainTag.innerHTML += result;
 }
@@ -163,7 +163,7 @@ function renderProducts(mainTag, promotions) {
     const productContainer = productContainers[index];
     const productsMarkup = promotion.products
       .map((product) => createProductMarkup(product))
-      .join("\n");
+      .join("");
     productContainer.innerHTML = productsMarkup;
   });
 }
@@ -188,9 +188,9 @@ function createProductMarkup(product) {
         </div>
         <button aria-label="${product.productName} 상품 추가 버튼"
           data-id="${product.productId}">
-          <span class="icon icon-add-cart material-symbols-rounded add-cart-button">add_Circle</span>
+          <span class="icon icon-add-cart material-symbols-rounded button-add-cart">add_Circle</span>
         </button>
       </div>
     </div>
-`;
+  `;
 }
