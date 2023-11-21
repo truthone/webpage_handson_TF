@@ -106,7 +106,7 @@ const promotions = [
         productName: "동유럽감성 피크닉 햇 + 피크닉 가방 세트",
         price: 28000,
         discountPrice: 8000,
-        productId: "p1",
+        productId: "401",
         imageUrl: "https://media.graphassets.com/TTUhaiT0lsmx7eon1PAZ",
         link: "./detail.html",
       },
@@ -114,21 +114,21 @@ const promotions = [
         productName: "피크닉 바구니 (레드 체크 식탁보 포함)",
         price: 19000,
         discountPrice: 9800,
-        productId: "p2",
+        productId: "402",
         imageUrl: "https://media.graphassets.com/nguzRYFFRPeRMClFt7YX",
       },
       {
         productName: "피크닉 플레저 디쉬 우드 트레이",
         price: 12400,
         discountPrice: 8400,
-        productId: "p3",
+        productId: "403",
         imageUrl: "https://media.graphassets.com/zJwe9WH5TvO0z6oZlOaZ",
       },
       {
         productName: "플라스틱 와인 고블렛 잔 2p",
         price: 10000,
         discountPrice: 8000,
-        productId: "p4",
+        productId: "404",
         imageUrl: "https://media.graphassets.com/RoWLHySjSgqrQeLR1N2B",
       },
     ],
@@ -188,7 +188,7 @@ function createProductMarkup(product) {
         </div>
         <button aria-label="${product.productName} 상품 추가 버튼"
           data-id="${product.productId}">
-          <span class="icon icon-add-cart material-symbols-rounded button-add-cart">add_Circle</span>
+          <span class="icon icon-add-cart material-symbols-rounded add-cart-button">add_Circle</span>
         </button>
       </div>
     </div>
