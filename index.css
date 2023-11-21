@@ -136,7 +136,7 @@ figure {
   }
 
   article {
-    height: auto;
+    height: fit-content;
   }
 
   #logo {
@@ -173,6 +173,10 @@ figure {
 }
 
 @media all and (max-width: 426px) {
+  article {
+    height: fit-content;
+  }
+
   .icon-nav,
   .icon-add-cart {
     font-size: 20px;
