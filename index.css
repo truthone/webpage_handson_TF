@@ -33,6 +33,7 @@
 
 article {
   width: 100%;
+  height: fit-content;
 }
 
 .icon-add-cart {
@@ -135,10 +136,6 @@ figure {
     text-align: center;
   }
 
-  article {
-    height: 50%;
-  }
-
   #logo {
     font-size: 20px;
   }
@@ -173,10 +170,6 @@ figure {
 }
 
 @media all and (max-width: 426px) {
-  article {
-    height: 50%;
-  }
-
   .icon-nav,
   .icon-add-cart {
     font-size: 20px;
