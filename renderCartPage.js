@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("click", (e) => {
-  console.log(e.target.dataset.id);
   removeFromCart(e.target.dataset.id);
 });
 
