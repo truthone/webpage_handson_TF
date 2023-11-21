@@ -1,4 +1,4 @@
-<<<<<<< HEAD .grid {
+.grid {
   width: 100%;
   border: 1px solid rgb(60, 72, 107);
   border-right: none;
@@ -30,9 +30,6 @@
   justify-content: space-between;
   margin: 10px;
 }
-=======
-/* main */
->>>>>>> 730c83bb89c55ef3e74c2835dbf6c56159f36c70
 
 article {
   width: 100%;
@@ -138,6 +135,10 @@ figure {
     text-align: center;
   }
 
+  article {
+    height: 50%;
+  }
+
   #logo {
     font-size: 20px;
   }
@@ -172,6 +173,10 @@ figure {
 }
 
 @media all and (max-width: 426px) {
+  article {
+    height: 50%;
+  }
+
   .icon-nav,
   .icon-add-cart {
     font-size: 20px;
