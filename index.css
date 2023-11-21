@@ -169,15 +169,6 @@ figure {
 }
 
 @media all and (max-width: 426px) {
-  .grid {
-    border: 1px solid rgb(60, 72, 107);
-    border-right: none;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    margin-bottom: 20px;
-  }
   .icon-nav,
   .icon-add-cart {
     font-size: 20px;
@@ -186,5 +177,15 @@ figure {
   .item-thumbnail:hover {
     transform: scale(1.05);
     cursor: pointer;
+  }
+
+  .grid {
+    border: 1px solid rgb(60, 72, 107);
+    border-right: none;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    margin-bottom: 20px;
   }
 }
