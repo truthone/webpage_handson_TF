@@ -135,6 +135,10 @@ figure {
     text-align: center;
   }
 
+  article {
+    height: fit-content;
+  }
+
   #logo {
     font-size: 20px;
   }
