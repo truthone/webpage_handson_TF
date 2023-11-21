@@ -104,6 +104,10 @@ figure {
     text-align: center;
   }
 
+  article {
+    height: fit-content;
+  }
+
   #logo {
     font-size: 20px;
   }
@@ -136,5 +140,9 @@ figure {
   .item-thumbnail:hover {
     transform: scale(1.05);
     cursor: pointer;
+  }
+
+  article {
+    height: fit-content;
   }
 }
