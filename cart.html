@@ -12,7 +12,6 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./global.css" />
-    <link rel="stylesheet" href="./cart.css" />
     <link rel="stylesheet" href="./index.css" />
     <style>
       #cart-table {
@@ -42,19 +41,16 @@
     </header>
     <main>
       <section id="cart">
-        <table id="cart-table">
-          <thead>
-            <tr>
-              <th>이미지</th>
-              <th>상품명</th>
-              <th>가격</th>
-              <th>수량</th>
-              <th>총 가격</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody id="cart-items"></tbody>
-        </table>
+        <div id="cart-table">
+          <div class="flex-between">
+            <div>이미지</div>
+            <div>상품명</div>
+            <div>가격</div>
+            <div>수량</div>
+            <div>총 가격</div>
+          </div>
+          <section id="cart-items"></section>
+        </div>
       </section>
       <section id="summary">
         <span id="amount">총 수량: </span><span>개</span>
@@ -101,16 +97,16 @@
         cart.forEach((item) => {
           const row = document.createElement("tr");
           row.innerHTML = `
-              <td><img src="${item.imageUrl}" alt="${item.productName}""></td>
-              <td>${item.productName}</td>
-              <td>${item.price}원</td>
-              <td>${item.quantity}</td>
-              <td>${item.price * item.quantity}원</td>
-              <td>
+              <div><img src="${item.imageUrl}" alt="${item.productName}""></div>
+              <div>${item.productName}</div>
+              <div>${item.price}원</div>
+              <div>${item.quantity}</div>
+              <div>${item.price * item.quantity}원</div>
+              <div>
                 <button class='remove-button' data-id="${item.productId}">
                   삭제
                 </button>
-              </td>
+              </div>
             `;
           sum += item.price;
           amount += item.quantity;
