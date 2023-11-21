@@ -143,10 +143,10 @@
       let currentIndex = 0;
       const lastIndex = 2;
       let isThrottled = false;
-      const THROTTLE_DURATION = 500;
+      const throttleDuration = 500;
 
       document.addEventListener("DOMContentLoaded", () => {
-        setVisibilityOfSlideButtons(currentIndex);
+        updateVisibilityOfSlideButtons(currentIndex);
       });
 
       btnPrev.addEventListener("click", () => {
@@ -158,11 +158,11 @@
           behavior: "smooth",
         });
         currentIndex--;
-        setVisibilityOfSlideButtons(currentIndex);
+        updateVisibilityOfSlideButtons(currentIndex);
 
         setTimeout(() => {
           isThrottled = false;
-        }, THROTTLE_DURATION);
+        }, throttleDuration);
       });
 
       btnNext.addEventListener("click", () => {
@@ -174,14 +174,14 @@
           behavior: "smooth",
         });
         currentIndex++;
-        setVisibilityOfSlideButtons(currentIndex);
+        updateVisibilityOfSlideButtons(currentIndex);
 
         setTimeout(() => {
           isThrottled = false;
-        }, THROTTLE_DURATION);
+        }, throttleDuration);
       });
 
-      function setVisibilityOfSlideButtons(currentIndex) {
+      function updateVisibilityOfSlideButtons(currentIndex) {
         if (currentIndex === 0) {
           btnPrev.style.display = "none";
           btnNext.style.display = "block";
