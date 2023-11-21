@@ -72,6 +72,7 @@
     </footer>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
+        cart = loadCart();
         renderCartItems();
       });
 
@@ -84,11 +85,18 @@
         }
       });
 
+      function loadCart() {
+        const storedCart = sessionStorage.getItem("cart");
+        return storedCart ? JSON.parse(storedCart) : [];
+      }
+
       function renderCartItems() {
         const cartItemsElement = document.getElementById("cart-items");
         cartItemsElement.innerHTML = "";
         let sum = 0;
         let amount = 0;
+
+        console.log(cart);
 
         cart.forEach((item) => {
           const row = document.createElement("tr");
