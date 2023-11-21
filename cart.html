@@ -135,8 +135,9 @@
           (acc, item) => acc + item.price * item.quantity,
           0
         );
+        const formattedSum = totalSum.toLocaleString();
         document.getElementById("amount").innerHTML = `총 수량: ${amount}`;
-        document.getElementById("sum").innerHTML = `총 합계: ${totalSum}`;
+        document.getElementById("sum").innerHTML = `총 합계: ${formattedSum}`;
       }
     </script>
   </body>
