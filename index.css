@@ -137,4 +137,8 @@ figure {
     transform: scale(1.05);
     cursor: pointer;
   }
+
+  .product-description {
+    font-size: 14px;
+  }
 }
