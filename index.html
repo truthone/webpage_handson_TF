@@ -193,7 +193,7 @@
         });
       });
 
-      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      var cart = JSON.parse(localStorage.getItem("cart")) || [];
 
       const productList = [];
 
@@ -213,8 +213,10 @@
             const productInCart = cart.find((p) => p.productId === productId);
             productInCart.quantity += 1;
           }
-          saveCart();
         }
+
+        alert("장바구니에 추가되었습니다!");
+        console.log(cart);
       }
 
       function saveCart() {
