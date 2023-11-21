@@ -130,7 +130,7 @@
         localStorage.setItem("cart", JSON.stringify(cart));
       }
 
-      function renderSum(amount) {
+      function renderSum(sum, amount) {
         const totalSum = cart.reduce(
           (acc, item) => acc + item.price * item.quantity,
           0
