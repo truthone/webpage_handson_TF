@@ -109,12 +109,9 @@
                 </button>
               </td>
             `;
-          sum += item.price;
-          amount += item.quantity;
           cartItemsElement.appendChild(row);
+          renderSum();
         });
-
-        renderSum(sum, amount);
       }
 
       function removeFromCart(productId) {
@@ -133,11 +130,12 @@
         localStorage.setItem("cart", JSON.stringify(cart));
       }
 
-      function renderSum(sum, amount) {
+      function renderSum() {
         const totalSum = cart.reduce(
-          (acc, item) => acc + item.price * item.quantity,
+          (acc, item) => acc + item.discountPrice * item.quantity,
           0
         );
+        const amount = cart.reduce((acc, item) => acc + item.quantity, 0);
         const formattedSum = totalSum.toLocaleString();
         document.getElementById("amount").innerHTML = `총 수량: ${amount}`;
         document.getElementById("sum").innerHTML = `총 합계: ${formattedSum}`;
