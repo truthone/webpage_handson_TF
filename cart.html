@@ -97,7 +97,10 @@
           row.innerHTML = `
               <td><img src="${item.imageUrl}" alt="${item.productName}""></td>
               <td>${item.productName}</td>
-              <td>${item.price}원</td>
+              <td>
+                <div class="item-price">${item.price}원</div>
+                <div class="saled-price">${item.discountPrice}원</div>
+              </td>
               <td>${item.quantity}</td>
               <td>${item.price * item.quantity}원</td>
               <td>
