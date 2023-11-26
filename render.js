@@ -1,3 +1,4 @@
+import { promotions } from "https://media.graphassets.com/n5qrl3pRBWb51NXtbdr8";
 document.addEventListener("DOMContentLoaded", () => {
   const mainTag = document.getElementsByTagName("main")[0];
   renderPromotions(mainTag, promotions);
