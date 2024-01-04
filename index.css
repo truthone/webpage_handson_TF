@@ -163,7 +163,7 @@ figure {
   background-size: cover;
 }
 
-@media all and (max-width: 800px) {
+/* @media all and (max-width: 800px) {
   .grid {
     border: 1px solid rgb(60, 72, 107);
     border-right: none;
@@ -185,4 +185,8 @@ figure {
     grid-template-rows: 1fr 1fr 1fr 1fr;
     margin-bottom: 20px;
   }
+} */
+
+figcaption {
+  display: none;
 }
