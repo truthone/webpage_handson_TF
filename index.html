@@ -251,6 +251,7 @@
               discountPrice: 8800,
               productId: "302",
               imageUrl: "https://media.graphassets.com/Q2wF87XRsypxkbR3eoxA",
+              link: "./detail.html",
             },
             {
               productName: "네이처파운드 유칼립투스 아로마 오일 20ml",
@@ -258,6 +259,7 @@
               discountPrice: 3200,
               productId: "303",
               imageUrl: "https://media.graphassets.com/grsQhbCjRvqpCqYVN3YH",
+              link: "./detail.html",
             },
             {
               productName: "네이처파운드 비온뒤 상쾌한 향 롤링온 아로마 20ml ",
@@ -265,6 +267,7 @@
               discountPrice: 8000,
               productId: "301",
               imageUrl: "https://media.graphassets.com/qEdoFg3SToGccBmkTXCG",
+              link: "./detail.html",
             },
             {
               productName: "GOLDEN SCENT 네이처 골든 우드 향수 45ml",
@@ -272,6 +275,7 @@
               discountPrice: 39000,
               productId: "304",
               imageUrl: "https://media.graphassets.com/PIWwpLC3Qh2ELsKaT0YD",
+              link: "./detail.html",
             },
           ],
         },
@@ -292,6 +296,7 @@
               discountPrice: 9800,
               productId: "p2",
               imageUrl: "https://media.graphassets.com/nguzRYFFRPeRMClFt7YX",
+              link: "./detail.html",
             },
             {
               productName: "피크닉 플레저 디쉬 우드 트레이",
@@ -299,6 +304,7 @@
               discountPrice: 8400,
               productId: "p3",
               imageUrl: "https://media.graphassets.com/zJwe9WH5TvO0z6oZlOaZ",
+              link: "./detail.html",
             },
             {
               productName: "플라스틱 와인 고블렛 잔 2p",
@@ -306,62 +312,72 @@
               discountPrice: 8000,
               productId: "p4",
               imageUrl: "https://media.graphassets.com/RoWLHySjSgqrQeLR1N2B",
+              link: "./detail.html",
             },
           ],
         },
       ];
 
-      const promotionsHTML = promotions
-        .map((promotion) => {
-          return `
-            <section>
-              <h1 class="section-title">${promotion.sectionTitle}</h1>
-              <div class="productContainer grid">
-              </div>
-            </section>
-          `;
-        })
-        .join("");
+      document.addEventListener("DOMContentLoaded", () => {
+        const mainTag = document.getElementsByTagName("main")[0];
+        renderPromotions(mainTag, promotions);
+        renderProducts(mainTag, promotions);
+      });
 
-      const mainTag = document.getElementsByTagName("main")[0];
-      mainTag.innerHTML += promotionsHTML;
-
-      const productContainers =
-        mainTag.getElementsByClassName("productContainer");
-
-      promotions.forEach((promotion, index) => {
-        const productContainer = productContainers[index];
-
-        const productsHTML = promotion.products
-          .map((product) => {
+      function renderPromotions(mainTag, promotions) {
+        const promotionsHTML = promotions
+          .map((promotion) => {
             return `
-                <div class="item" data-id="${product.productId}">
-                  <figure>
-                    <img class="item-thumbnail"
-                      src="${product.imageUrl}"
-                      alt="${product.productName} 상품 이미지" />
-                  </figure>
-                  <div class="flex-between">
-                    <div class="item-info">
-                      <a href="${product.link}"class="item-name">
-                        ${product.productName}
-                      </a>
-                      <div class="price-info">
-                        <p class="item-price">${product.price.toLocaleString()}원</p>
-                        <p class="saled-price">${product.discountPrice.toLocaleString()}원</p>
-                      </div>
-                    </div>
-                    <button aria-label="${product.productName} 상품 추가 버튼"
-                      data-id="${product.productId}">
-                      <span class="icon icon-add-cart material-symbols-rounded button-add-cart">add_Circle</span>
-                    </button>
-                  </div>
+              <section>
+                <h1 class="section-title">${promotion.sectionTitle}</h1>
+                <div class="productContainer grid">
                 </div>
-              `;
+              </section>
+            `;
           })
           .join("");
-        productContainer.innerHTML = productsHTML;
-      });
+
+        mainTag.innerHTML += promotionsHTML;
+      }
+
+      function renderProducts(mainTag, promotions) {
+        const productContainers =
+          mainTag.getElementsByClassName("productContainer");
+        promotions.forEach((promotion, index) => {
+          const productContainer = productContainers[index];
+          const productsHTML = promotion.products
+            .map((product) => createProductMarkup(product))
+            .join("");
+          productContainer.innerHTML = productsHTML;
+        });
+      }
+
+      function createProductMarkup(product) {
+        return `
+          <div class="item" data-id="${product.productId}">
+            <figure>
+              <img class="item-thumbnail" 
+                src="${product.imageUrl}" 
+                alt="${product.productName} 상품 이미지" />
+            </figure>
+            <div class="flex-between">
+              <div class="item-info">
+                <a href="${product.link}"class="item-name">
+                  ${product.productName}
+                </a>
+                <div class="price-info">
+                  <p class="item-price">${product.price.toLocaleString()}원</p>
+                  <p class="saled-price">${product.discountPrice.toLocaleString()}원</p>
+                </div>
+              </div>
+              <button aria-label="${product.productName} 상품 추가 버튼"
+                data-id="${product.productId}">
+                <span class="icon icon-add-cart material-symbols-rounded button-add-cart">add_Circle</span>
+              </button>
+            </div>
+          </div>
+        `;
+      }
     </script>
   </body>
 </html>
