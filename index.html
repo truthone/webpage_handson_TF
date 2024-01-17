@@ -1,13 +1,17 @@
 <html>
-
   <head>
     <title>AMAZING MARKET</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./global.css" />
     <link rel="stylesheet" href="./index.css" />
   </head>
@@ -24,25 +28,22 @@
     </header>
     <main>
       <article>
-        <img src="https://media.graphassets.com/1VNPaRMKQH6XD3hQT9Fd" alt="메인 배너" />
+        <img
+          src="https://media.graphassets.com/1VNPaRMKQH6XD3hQT9Fd"
+          alt="메인 배너"
+        />
       </article>
     </main>
-    <footer>
-      AMAZING MARKET ⓒ 2023
-      <br />
-      대표번호 02-0000-0000 대표이메일 ulift@ulift.kr
-      <br />
-      All Photos by Unsplash
-    </footer>
+    <footer>AMAZING MARKET ⓒ 2024</footer>
     <script src="./header.js"></script>
     <script type="module" src="./render.js"></script>
     <script type="module">
-      import { promotions } from "https://media.graphassets.com/n5qrl3pRBWb51NXtbdr8";
-      document.addEventListener("DOMContentLoaded", function () {
-        const container = document.querySelector("main");
-        container.addEventListener("click", (e) => {
-          console.log('adaf')
-          if (e.target.matches(".add-cart-button")) {
+      import { promotions } from 'https://media.graphassets.com/n5qrl3pRBWb51NXtbdr8';
+      document.addEventListener('DOMContentLoaded', function () {
+        const container = document.querySelector('main');
+        container.addEventListener('click', (e) => {
+          console.log('adaf');
+          if (e.target.matches('.add-cart-button')) {
             const itemId = e.target.parentElement.dataset.id;
             if (itemId) {
               addToCart(itemId);
@@ -51,7 +52,7 @@
         });
       });
 
-      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
       const productList = [];
 
@@ -62,7 +63,7 @@
       });
 
       function addToCart(productId) {
-        console.log('dd')
+        console.log('dd');
         const product = productList.find((p) => p.productId === productId);
         if (product) {
           const isProductInCart = cart.some((p) => p.productId === productId);
@@ -77,10 +78,9 @@
       }
 
       function saveCart() {
-        localStorage.setItem("cart", JSON.stringify(cart));
-        alert("장바구니에 추가되었습니다!");
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert('장바구니에 추가되었습니다!');
       }
     </script>
   </body>
-
 </html>

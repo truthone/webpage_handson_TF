@@ -27,8 +27,11 @@
         display: flex;
         overflow-x: scroll;
         scroll-snap-type: x mandatory;
-        white-space: nowrap;
         width: 100%;
+      }
+
+      .carousel::-webkit-scrollbar {
+        display: none; /* 크롬, 사파리, 오페라, 엣지 */
       }
 
       .carousel img {
@@ -125,13 +128,7 @@
         />
       </section>
     </main>
-    <footer>
-      OPENMARKET ⓒ 2023
-      <br />
-      대표번호 02-0000-0000 대표이메일 ulift@ulift.kr
-      <br />
-      All Photos by Unsplash
-    </footer>
+    <footer>AMAZINGMARKET ⓒ 2024</footer>
     <script>
       const carousel = document.querySelector('.carousel');
       const btnPrev = document.querySelector('.carousel-button.prev');
