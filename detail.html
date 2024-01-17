@@ -25,7 +25,7 @@
 
       .carousel {
         display: flex;
-        overflow-x: hidden;
+        overflow-x: scroll;
         scroll-snap-type: x mandatory;
         white-space: nowrap;
         width: 100%;
@@ -76,17 +76,17 @@
           <button class="carousel-button prev">◀</button>
           <div class="carousel">
             <img
-              src="https://media.graphassets.com/izCpAr0BQKqcI0Wqn27z"
+              src="https://media.graphassets.com/oEwLLr2nQCWdd3drkWsV"
               alt="상품 이미지"
               class="product-image"
             />
             <img
-              src="https://media.graphassets.com/VkTBsEDS5m6b7mefHpXs"
+              src="https://media.graphassets.com/z2a5GFTHRAGPQ2Llxl7k"
               alt="상품 이미지"
               class="product-image"
             />
             <img
-              src="https://media.graphassets.com/8yudA9vrQBm0gS25bNMQ"
+              src="https://media.graphassets.com/3FRJPWTBO6JqPe9WK3mw"
               alt="상품 이미지"
               class="product-image"
             />
@@ -95,8 +95,10 @@
         </div>
         <section id="util">
           <div>
-            <h1 class="product-title">오버사이즈 멜톤 더플 롱 코트 네이비</h1>
-            <h2 class="product-price">₩ 50,000 원</h2>
+            <h1 class="product-title">
+              [겨울 목도리 모음] 3가지 따뜻한 목도리 SET
+            </h1>
+            <h2 class="product-price">₩ 21,000 원</h2>
           </div>
           <div>
             <div class="buttons flex-row">
@@ -131,26 +133,26 @@
       All Photos by Unsplash
     </footer>
     <script>
-      const carousel = document.querySelector(".carousel");
-      const btnPrev = document.querySelector(".carousel-button.prev");
-      const btnNext = document.querySelector(".carousel-button.next");
+      const carousel = document.querySelector('.carousel');
+      const btnPrev = document.querySelector('.carousel-button.prev');
+      const btnNext = document.querySelector('.carousel-button.next');
 
       let currentIndex = 0;
       const lastIndex = 2;
       let isThrottled = false;
       const throttleDuration = 500;
 
-      document.addEventListener("DOMContentLoaded", () => {
+      document.addEventListener('DOMContentLoaded', () => {
         updateVisibilityOfSlideButtons(currentIndex);
       });
 
-      btnPrev.addEventListener("click", () => {
+      btnPrev.addEventListener('click', () => {
         if (isThrottled) return;
         isThrottled = true;
 
         carousel.scrollBy({
           left: -carousel.clientWidth,
-          behavior: "smooth",
+          behavior: 'smooth',
         });
         currentIndex--;
         updateVisibilityOfSlideButtons(currentIndex);
@@ -160,13 +162,13 @@
         }, throttleDuration);
       });
 
-      btnNext.addEventListener("click", () => {
+      btnNext.addEventListener('click', () => {
         if (isThrottled) return;
         isThrottled = true;
 
         carousel.scrollBy({
           left: carousel.clientWidth,
-          behavior: "smooth",
+          behavior: 'smooth',
         });
         currentIndex++;
         updateVisibilityOfSlideButtons(currentIndex);
@@ -178,14 +180,14 @@
 
       function updateVisibilityOfSlideButtons(currentIndex) {
         if (currentIndex === 0) {
-          btnPrev.style.display = "none";
-          btnNext.style.display = "block";
+          btnPrev.style.display = 'none';
+          btnNext.style.display = 'block';
         } else if (currentIndex === 1) {
-          btnPrev.style.display = "block";
-          btnNext.style.display = "block";
+          btnPrev.style.display = 'block';
+          btnNext.style.display = 'block';
         } else {
-          btnPrev.style.display = "block";
-          btnNext.style.display = "none";
+          btnPrev.style.display = 'block';
+          btnNext.style.display = 'none';
         }
       }
     </script>
