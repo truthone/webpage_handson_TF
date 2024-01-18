@@ -128,7 +128,6 @@
         />
       </section>
     </main>
-    <footer>AMAZINGMARKET ⓒ 2024</footer>
     <script>
       const carousel = document.querySelector('.carousel');
       const btnPrev = document.querySelector('.carousel-button.prev');
@@ -138,53 +137,46 @@
       const lastIndex = 2;
       let isThrottled = false;
       const throttleDuration = 500;
+      const slideWidth = carousel.clientWidth;
 
       document.addEventListener('DOMContentLoaded', () => {
         updateVisibilityOfSlideButtons(currentIndex);
       });
 
+      function moveCarousel(offset) {
+        if (isThrottled) return;
+        isThrottled = true;
+
+        carousel.scrollBy({
+          left: offset * carousel.clientWidth,
+          behavior: 'smooth',
+        });
+
+        currentIndex += offset;
+        updateVisibilityOfSlideButtons(currentIndex);
+
+        setTimeout(() => {
+          isThrottled = false;
+        }, throttleDuration);
+      }
+
       btnPrev.addEventListener('click', () => {
-        if (isThrottled) return;
-        isThrottled = true;
-
-        carousel.scrollBy({
-          left: -carousel.clientWidth,
-          behavior: 'smooth',
-        });
-        currentIndex--;
-        updateVisibilityOfSlideButtons(currentIndex);
-
-        setTimeout(() => {
-          isThrottled = false;
-        }, throttleDuration);
+        moveCarousel(-1);
       });
-
       btnNext.addEventListener('click', () => {
-        if (isThrottled) return;
-        isThrottled = true;
-
-        carousel.scrollBy({
-          left: carousel.clientWidth,
-          behavior: 'smooth',
-        });
-        currentIndex++;
-        updateVisibilityOfSlideButtons(currentIndex);
-
-        setTimeout(() => {
-          isThrottled = false;
-        }, throttleDuration);
+        moveCarousel(1);
       });
 
       function updateVisibilityOfSlideButtons(currentIndex) {
         if (currentIndex === 0) {
           btnPrev.style.display = 'none';
           btnNext.style.display = 'block';
-        } else if (currentIndex === 1) {
-          btnPrev.style.display = 'block';
-          btnNext.style.display = 'block';
-        } else {
+        } else if (currentIndex === lastIndex) {
           btnPrev.style.display = 'block';
           btnNext.style.display = 'none';
+        } else {
+          btnPrev.style.display = 'block';
+          btnNext.style.display = 'block';
         }
       }
     </script>
