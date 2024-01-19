@@ -72,7 +72,7 @@
       });
 
       document.addEventListener('click', (e) => {
-        if (e.target?.classList.contains('remove-button')) {
+        if (e.target.classList.contains('remove-button')) {
           const productId = e.target.dataset.id;
           if (productId) {
             removeFromCart(productId);
