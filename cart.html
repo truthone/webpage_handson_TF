@@ -49,7 +49,7 @@
               <th>상품명</th>
               <th>가격</th>
               <th>수량</th>
-              <th>총 가격</th>
+              <th>총가격</th>
               <th></th>
             </tr>
           </thead>
@@ -57,24 +57,20 @@
         </table>
       </section>
       <section id="summary">
-        <span id="amount">총 수량: </span>
+        <span id="amount"></span>
         <span>/</span>
-        <span id="sum">총 합계: </span>
+        <span id="sum"></span>
       </section>
     </main>
     <footer>AMAZING MARKET ⓒ 2024</footer>
     <script src="./header.js"></script>
     <script>
-      const cartItemsElement = document.getElementById('cart-items');
-      const amountElement = document.getElementById('amount');
-      const sumElement = document.getElementById('sum');
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      document.addEventListener("DOMContentLoaded", renderCartItems);
 
-      document.addEventListener('DOMContentLoaded', renderCartItems);
-
-      document.addEventListener('click', (e) => {
-        if (e.target.classList.contains('remove-button')) {
+      document.addEventListener("click", (e) => {
+        if (e.target.classList.contains("remove-button")) {
           const productId = e.target.dataset.id;
           if (productId) {
             removeFromCart(productId);
@@ -83,21 +79,22 @@
       });
 
       function renderCartItems() {
-        cartItemsElement.innerHTML = '';
+        const cartItemsElement = document.getElementById("cart-items");
+        cartItemsElement.innerHTML = "";
 
         cart.forEach((item) => {
-          const row = document.createElement('tr');
+          const row = document.createElement("tr");
           row.innerHTML = `
               <td><img src="${item.imageUrl}" alt="${item.productName}"></td>
               <td>${item.productName}</td>
               <td>
-                <div class="item-price">${item.price}원</div>
-                <div class="saled-price">${item.discountPrice}원</div>
+                <div class="item-price">${item.price.toLocaleString()}원</div>
+                <div class="saled-price">${item.discountPrice.toLocaleString()}원</div>
               </td>
               <td>${item.quantity}</td>
-              <td>${item.discountPrice * item.quantity}원</td>
+              <td>${(item.discountPrice * item.quantity).toLocaleString()}원</td>
               <td>
-                <button class='remove-button' data-id="${item.productId}">
+                <button class="remove-button" data-id="${item.productId}">
                   삭제
                 </button>
               </td>
@@ -108,6 +105,19 @@
         renderSum();
       }
 
+      function renderSum() {
+        const sum = cart.reduce(
+          (acc, item) => acc + item.discountPrice * item.quantity, 
+          0
+        );
+        const amount = cart.reduce(
+          (acc, item) => acc + item.quantity, 
+          0
+        );
+        document.getElementById("amount").innerHTML = `총수량: ${amount}`;
+        document.getElementById("sum").innerHTML = `총합계: ${sum.toLocaleString()}`;
+      }
+
       function removeFromCart(productId) {
         const productIndex = cart.findIndex(
           (item) => item.productId === productId
@@ -115,28 +125,13 @@
 
         if (productIndex !== -1) {
           cart.splice(productIndex, 1);
+          saveCart();
+          renderCartItems();
         }
-        saveCart();
-        renderCartItems();
       }
 
       function saveCart() {
-        localStorage.setItem('cart', JSON.stringify(cart));
-      }
-
-      function renderSum() {
-        let totalSum = 0;
-        let amount = 0;
-        if (cart.length >= 1) {
-          totalSum = cart.reduce(
-            (acc, item) => acc + item.discountPrice * item.quantity,
-            0
-          );
-          amount = cart.reduce((acc, item) => acc + item.quantity, 0);
-        }
-        const formattedSum = totalSum.toLocaleString();
-        amountElement.textContent = `총 수량: ${amount}개`;
-        sumElement.textContent = `총 합계: ${formattedSum}원`;
+        localStorage.setItem("cart", JSON.stringify(cart));
       }
     </script>
   </body>
