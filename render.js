@@ -1,4 +1,4 @@
-import { promotions } from 'https://media.graphassets.com/n5qrl3pRBWb51NXtbdr8';
+import { promotions } from 'https://media.graphassets.com/g7euFI8bTWyEJWolD4CG';
 
 document.addEventListener('DOMContentLoaded', () => {
   const mainTag = document.getElementsByTagName('main')[0];
