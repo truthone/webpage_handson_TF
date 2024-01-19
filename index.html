@@ -38,10 +38,10 @@
     <script src="./header.js"></script>
     <script type="module" src="./render.js"></script>
     <script type="module">
-      import { promotions } from 'https://media.graphassets.com/n5qrl3pRBWb51NXtbdr8';
+      import { promotions } from "https://media.graphassets.com/n5qrl3pRBWb51NXtbdr8";
 
-      document.addEventListener('click', (e) => {
-        if (e.target.classList.contains('add-cart-button')) {
+      document.addEventListener("click", (e) => {
+        if (e.target.classList.contains("add-cart-button")) {
           const productId = e.target.parentNode.dataset.id;
           if (productId) {
             addToCart(productId);
@@ -49,7 +49,7 @@
         }
       });
 
-      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
       const productList = [];
 
       promotions.forEach((p) => {
@@ -70,8 +70,8 @@
       }
 
       function saveCart() {
-        localStorage.setItem('cart', JSON.stringify(cart));
-        alert('장바구니에 추가되었습니다!');
+        localStorage.setItem("cart", JSON.stringify(cart));
+        alert("장바구니에 추가되었습니다!");
       }
     </script>
   </body>
