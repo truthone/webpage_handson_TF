@@ -40,18 +40,16 @@
     <script type="module">
       import { promotions } from 'https://media.graphassets.com/n5qrl3pRBWb51NXtbdr8';
 
-      document.addEventListener('DOMContentLoaded', function () {
-        document.addEventListener('click', (e) => {
-          if (e.target.classList.contains('add-cart-button')) {
-            const itemId = e.target.parentNode.dataset.id;
-            if (itemId) {
-              addToCart(itemId);
-            }
+      document.addEventListener('click', (e) => {
+        if (e.target.classList.contains('add-cart-button')) {
+          const itemId = e.target.parentNode.dataset.id;
+          if (itemId) {
+            addToCart(itemId);
           }
-        });
+        }
       });
 
-      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
       const productList = [];
 

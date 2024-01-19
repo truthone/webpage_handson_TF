@@ -1,6 +1,7 @@
-import { promotions } from "https://media.graphassets.com/n5qrl3pRBWb51NXtbdr8";
-document.addEventListener("DOMContentLoaded", () => {
-  const mainTag = document.getElementsByTagName("main")[0];
+import { promotions } from 'https://media.graphassets.com/n5qrl3pRBWb51NXtbdr8';
+
+document.addEventListener('DOMContentLoaded', () => {
+  const mainTag = document.getElementsByTagName('main')[0];
   renderPromotions(mainTag, promotions);
   renderProducts(mainTag, promotions);
 });
@@ -16,18 +17,18 @@ function renderPromotions(mainTag, promotions) {
         </section>
       `;
     })
-    .join("");
+    .join('');
 
   mainTag.innerHTML += result;
 }
 
 function renderProducts(mainTag, promotions) {
-  const productContainers = mainTag.getElementsByClassName("productContainer");
+  const productContainers = mainTag.getElementsByClassName('productContainer');
   promotions.forEach((promotion, index) => {
     const productContainer = productContainers[index];
     const productsMarkup = promotion.products
       .map((product) => createProductMarkup(product))
-      .join("");
+      .join('');
     productContainer.innerHTML = productsMarkup;
   });
 }
