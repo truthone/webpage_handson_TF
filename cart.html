@@ -65,7 +65,7 @@
     <footer>AMAZING MARKET ⓒ 2024</footer>
     <script src="./header.js"></script>
     <script>
-      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
       document.addEventListener('DOMContentLoaded', () => {
         renderCartItems();
