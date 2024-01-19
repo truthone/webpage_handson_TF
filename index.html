@@ -42,7 +42,6 @@
       document.addEventListener('DOMContentLoaded', function () {
         const container = document.querySelector('main');
         container.addEventListener('click', (e) => {
-          console.log('adaf');
           if (e.target.matches('.add-cart-button')) {
             const itemId = e.target.parentElement.dataset.id;
             if (itemId) {
@@ -63,7 +62,6 @@
       });
 
       function addToCart(productId) {
-        console.log('dd');
         const product = productList.find((p) => p.productId === productId);
         if (product) {
           const isProductInCart = cart.some((p) => p.productId === productId);
