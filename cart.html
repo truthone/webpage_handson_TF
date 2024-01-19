@@ -57,19 +57,21 @@
         </table>
       </section>
       <section id="summary">
-        <span id="amount">총 수량: </span><span>개</span>
+        <span id="amount">총 수량: </span>
         <span>/</span>
-        <span id="sum">총 합계: </span><span>원</span>
+        <span id="sum">총 합계: </span>
       </section>
     </main>
     <footer>AMAZING MARKET ⓒ 2024</footer>
     <script src="./header.js"></script>
     <script>
+      const cartItemsElement = document.getElementById('cart-items');
+      const amountElement = document.getElementById('amount');
+      const sumElement = document.getElementById('sum');
+
       const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-      document.addEventListener('DOMContentLoaded', () => {
-        renderCartItems();
-      });
+      document.addEventListener('DOMContentLoaded', renderCartItems);
 
       document.addEventListener('click', (e) => {
         if (e.target.classList.contains('remove-button')) {
@@ -81,13 +83,12 @@
       });
 
       function renderCartItems() {
-        const cartItemsElement = document.getElementById('cart-items');
         cartItemsElement.innerHTML = '';
 
         cart.forEach((item) => {
           const row = document.createElement('tr');
           row.innerHTML = `
-              <td><img src="${item.imageUrl}" alt="${item.productName}""></td>
+              <td><img src="${item.imageUrl}" alt="${item.productName}"></td>
               <td>${item.productName}</td>
               <td>
                 <div class="item-price">${item.price}원</div>
@@ -103,6 +104,7 @@
             `;
           cartItemsElement.appendChild(row);
         });
+
         renderSum();
       }
 
@@ -133,8 +135,8 @@
           amount = cart.reduce((acc, item) => acc + item.quantity, 0);
         }
         const formattedSum = totalSum.toLocaleString();
-        document.getElementById('amount').innerHTML = `총 수량: ${amount}`;
-        document.getElementById('sum').innerHTML = `총 합계: ${formattedSum}`;
+        amountElement.textContent = `총 수량: ${amount}개`;
+        sumElement.textContent = `총 합계: ${formattedSum}원`;
       }
     </script>
   </body>
