@@ -1,0 +1,37 @@
+#cart-table thead tr {
+  background-color: rgb(254, 231, 93);
+  color: rgb(0, 0, 0);
+}
+
+#cart-table td {
+  max-width: 300px;
+  height: 300px;
+}
+
+#cart-table th,
+#cart-table td {
+  padding: 12px 15px;
+  font-size: 30px;
+}
+
+#cart-table tbody tr {
+  border-bottom: 1px solid rgb(60, 72, 107);
+}
+
+#cart-table button {
+  padding: 5px 10px;
+  background-color: rgb(244, 80, 80);
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#cart-table button:hover {
+  background-color: rgba(244, 80, 80, 0.7);
+}
+
+#summary {
+  font-size: 50px;
+  text-align: right;
+}
