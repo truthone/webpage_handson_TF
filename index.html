@@ -39,11 +39,11 @@
     <script type="module" src="./render.js"></script>
     <script type="module">
       import { promotions } from 'https://media.graphassets.com/n5qrl3pRBWb51NXtbdr8';
+
       document.addEventListener('DOMContentLoaded', function () {
-        const container = document.querySelector('main');
-        container.addEventListener('click', (e) => {
-          if (e.target.matches('.add-cart-button')) {
-            const itemId = e.target.parentElement.dataset.id;
+        document.addEventListener('click', (e) => {
+          if (e.target.classList.contains('add-cart-button')) {
+            const itemId = e.target.parentNode.dataset.id;
             if (itemId) {
               addToCart(itemId);
             }
