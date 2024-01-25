@@ -85,3 +85,8 @@ footer {
   font-size: 12px;
   line-height: 150%;
 }
+
+article > img {
+  width: 100%;
+  height: auto;
+}
