@@ -129,6 +129,15 @@ figure {
     transform: scale(1.05);
     cursor: pointer;
   }
+
+  .item-name,
+  .item-price,
+  .saled-price {
+    font-size: 10px;
+  }
+  .section-title {
+    font-size: 15px;
+  }
 }
 
 @media all and (max-width: 426px) {
@@ -145,12 +154,21 @@ figure {
   article {
     height: fit-content;
   }
+
+  .item-name,
+  .item-price,
+  .saled-price {
+    font-size: 10px;
+  }
+  .section-title {
+    font-size: 15px;
+  }
 }
 
 .item {
   border-right: 1px solid rgb(60, 72, 107);
   display: grid;
-  grid-template-rows: 400px 1fr;
+  grid-template-rows: 200px 1fr;
   grid-template-areas:
     "item-thumbnail"
     "item-info";
