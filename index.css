@@ -185,7 +185,7 @@ figure {
 .item {
   border-right: 1px solid rgb(60, 72, 107);
   display: grid;
-  grid-template-rows: 200px 1fr;
+  grid-template-rows: 1.8fr 1fr;
   grid-template-areas:
     "item-thumbnail"
     "item-info";
