@@ -92,7 +92,6 @@ figure {
   body,
   main {
     margin: 0;
-    font-size: 12px;
   }
 
   header {
@@ -149,7 +148,6 @@ figure {
   body,
   main {
     margin: 0;
-    font-size: 9px;
   }
 
   .icon-nav,
@@ -169,11 +167,11 @@ figure {
   .item-name,
   .item-price,
   .saled-price {
-    font-size: 1rem;
+    font-size: 9px;
     margin: 0;
   }
   .section-title {
-    font-size: 1rem;
+    font-size: 12px;
   }
   .button-add-cart {
     margin: 0;
