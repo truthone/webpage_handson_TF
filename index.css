@@ -139,8 +139,9 @@ figure {
   .section-title {
     font-size: 15px;
   }
-  .button-add-cart {
+  .icon {
     margin: 0;
+    padding: 10px;
   }
 }
 
@@ -173,8 +174,9 @@ figure {
   .section-title {
     font-size: 12px;
   }
-  .button-add-cart {
+  .icon {
     margin: 0;
+    padding: 10px;
   }
 }
 
