@@ -143,9 +143,6 @@ figure {
   .button-add-cart {
     margin: 0;
   }
-  .icon {
-    margin: 0;
-  }
 }
 
 @media all and (max-width: 426px) {
