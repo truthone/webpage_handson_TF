@@ -141,8 +141,8 @@ figure {
   }
   .icon {
     margin: 0;
-    padding: 10px;
-    font-size: 14px;
+    font-size: 9px;
+    padding: 5px;
   }
 }
 
@@ -177,7 +177,8 @@ figure {
   }
   .icon {
     margin: 0;
-    padding: 10px;
+    font-size: 9px;
+    padding: 5px;
   }
 }
 
