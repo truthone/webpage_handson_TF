@@ -15,52 +15,7 @@
     <link rel="stylesheet" href="./detail.css" />
     <link rel="stylesheet" href="./global.css" />
     <link rel="stylesheet" href="./index.css" />
-    <style>
-      .carousel-container {
-        position: relative;
-        max-width: 500px;
-        min-width: 300px;
-        height: auto;
-      }
-
-      .carousel {
-        display: flex;
-        overflow-x: scroll;
-        scroll-snap-type: x mandatory;
-        width: 100%;
-      }
-
-      ::-webkit-scrollbar {
-        display: none; /* 크롬, 사파리, 오페라, 엣지 */
-      }
-
-      .carousel img {
-        flex: 0 0 auto;
-        scroll-snap-align: start;
-        object-fit: cover;
-        height: inherit;
-      }
-
-      .carousel-button {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: rgba(240, 240, 240, 0.5);
-        color: rgb(60, 72, 107);
-        border: none;
-        padding: 15px 20px;
-        cursor: pointer;
-        font-size: 40px;
-      }
-
-      .carousel-button.prev {
-        left: 0;
-      }
-
-      .carousel-button.next {
-        right: 0;
-      }
-    </style>
+    <style></style>
   </head>
 
   <body>
@@ -75,27 +30,6 @@
     </header>
     <main>
       <div class="container flex-row">
-        <div class="carousel-container">
-          <button class="carousel-button prev">◀</button>
-          <div class="carousel">
-            <img
-              src="https://media.graphassets.com/oEwLLr2nQCWdd3drkWsV"
-              alt="상품 이미지"
-              class="product-image"
-            />
-            <img
-              src="https://media.graphassets.com/z2a5GFTHRAGPQ2Llxl7k"
-              alt="상품 이미지"
-              class="product-image"
-            />
-            <img
-              src="https://media.graphassets.com/3FRJPWTBO6JqPe9WK3mw"
-              alt="상품 이미지"
-              class="product-image"
-            />
-          </div>
-          <button class="carousel-button next">▶</button>
-        </div>
         <section id="util">
           <div>
             <h1 class="product-title">
@@ -129,49 +63,7 @@
       </section>
     </main>
     <footer>AMAZING MARKET ⓒ 2024</footer>
-    <script>
-      const carousel = document.querySelector('.carousel');
-      const btnPrev = document.querySelector('.carousel-button.prev');
-      const btnNext = document.querySelector('.carousel-button.next');
-
-      let currentIndex = 0;
-      const lastIndex = 2;
-      let isThrottled = false;
-      const throttleDuration = 500;
-
-      document.addEventListener('DOMContentLoaded', () => {
-        updateVisibilityOfSlideButtons(currentIndex);
-      });
-
-      function moveCarousel(offset) {
-        if (isThrottled) return;
-        isThrottled = true;
-
-        carousel.scrollBy({
-          left: offset * carousel.clientWidth,
-          behavior: 'smooth',
-        });
-
-        currentIndex += offset;
-        updateVisibilityOfSlideButtons(currentIndex);
-
-        setTimeout(() => {
-          isThrottled = false;
-        }, throttleDuration);
-      }
-
-      btnPrev.addEventListener('click', () => {
-        moveCarousel(-1);
-      });
-      btnNext.addEventListener('click', () => {
-        moveCarousel(1);
-      });
-
-      function updateVisibilityOfSlideButtons(currentIndex) {
-        btnPrev.style.display = currentIndex === 0 ? 'none' : 'block';
-        btnNext.style.display = currentIndex === lastIndex ? 'none' : 'block';
-      }
-    </script>
+    <script></script>
     <script src="./header.js"></script>
   </body>
 </html>
