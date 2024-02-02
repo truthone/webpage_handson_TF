@@ -58,14 +58,7 @@
         />
       </article>
     </main>
-    <footer>
-      AMAZING MARKET ⓒ 2023
-      <br />
-      대표번호 02-0000-0000 대표이메일 ulift@ulift.kr
-      <br />
-      All Photos by Unsplash
-    </footer>
-    <script src="./header.js"></script>
+    <footer>AMAZING MARKET ⓒ 2024</footer>
     <script>
       const promotions = [
         {
@@ -240,7 +233,6 @@
 
         mainTag.innerHTML += promotionsHTML;
       }
-
       function renderProducts(mainTag, promotions) {
         const productContainers =
           mainTag.getElementsByClassName("productContainer");
@@ -260,6 +252,7 @@
               <img class="item-thumbnail" 
                 src="${product.imageUrl}" 
                 alt="${product.productName} 상품 이미지" />
+                <figcaption>${product.productName}</figcaption>
             </figure>
             <div class="flex-between">
               <div class="item-info">
