@@ -27,28 +27,31 @@
         position: relative;
       }
 
-      ::-webkit-scrollbar {
-        display: none; /* 크롬, 사파리, 오페라, 엣지 */
-      }
-
       .carousel-button {
         position: absolute;
         top: 50%;
-        transform: translateY(-50%);
-        background: rgba(240, 240, 240, 0.5);
-        color: rgb(60, 72, 107);
-        border: none;
         padding: 15px 20px;
         cursor: pointer;
         font-size: 40px;
+        background: rgba(240, 240, 240, 0.5);
+        border: 5px solid salmon;
+        color: rgb(60, 72, 107);
       }
 
-      .carousel-button.prev {
-        left: 0;
+      .carousel-container {
+        position: relative;
       }
+
+      /* .carousel-button.prev {
+        left: 0;
+      } */
 
       .carousel-button.next {
         right: 0;
+      }
+
+      ::-webkit-scrollbar {
+        display: none; /* 크롬, 사파리, 오페라, 엣지 */
       }
     </style>
   </head>
@@ -67,6 +70,7 @@
       <div class="container flex-row">
         <div class="carousel-container">
           <button class="carousel-button prev">◀</button>
+          <button class="carousel-button next">▶</button>
           <div class="carousel">
             <img
               src="https://media.graphassets.com/oEwLLr2nQCWdd3drkWsV"
@@ -84,7 +88,6 @@
               class="product-image"
             />
           </div>
-          <button class="carousel-button next">▶</button>
         </div>
         <section id="util">
           <div>
@@ -128,13 +131,16 @@
       btnPrev.addEventListener("click", () => {
         carousel.scrollBy({
           left: -1 * carousel.clientWidth,
+          behavior: "smooth",
         });
 
         currentIndex += offset;
       });
+
       btnNext.addEventListener("click", () => {
         carousel.scrollBy({
           left: 1 * carousel.clientWidth,
+          behavior: "smooth",
         });
 
         currentIndex += offset;
