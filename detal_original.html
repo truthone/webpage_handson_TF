@@ -16,31 +16,45 @@
     <link rel="stylesheet" href="./global.css" />
     <link rel="stylesheet" href="./index.css" />
     <style>
-      .carousel {
-        display: flex;
-        align-items: center;
-        overflow-x: hidden;
-        max-width: 500px;
-        min-width: 300px;
-      }
-
       .carousel-container {
         position: relative;
+        max-width: 500px;
+        min-width: 300px;
+        height: auto;
+      }
+
+      .carousel {
+        display: flex;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+        width: 100%;
+      }
+
+      ::-webkit-scrollbar {
+        display: none; /* 크롬, 사파리, 오페라, 엣지 */
+      }
+
+      .carousel img {
+        flex: 0 0 auto;
+        scroll-snap-align: start;
+        object-fit: cover;
+        height: inherit;
       }
 
       .carousel-button {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
+        background: rgba(240, 240, 240, 0.5);
+        color: rgb(60, 72, 107);
+        border: none;
         padding: 15px 20px;
         cursor: pointer;
         font-size: 40px;
-        background: rgba(240, 240, 240, 0.5);
-        color: rgb(60, 72, 107);
       }
 
-      .carousel-container {
-        position: relative;
+      .carousel-button.prev {
+        left: 0;
       }
 
       .carousel-button.next {
@@ -63,7 +77,6 @@
       <div class="container flex-row">
         <div class="carousel-container">
           <button class="carousel-button prev">◀</button>
-          <button class="carousel-button next">▶</button>
           <div class="carousel">
             <img
               src="https://media.graphassets.com/oEwLLr2nQCWdd3drkWsV"
@@ -81,6 +94,7 @@
               class="product-image"
             />
           </div>
+          <button class="carousel-button next">▶</button>
         </div>
         <section id="util">
           <div>
@@ -106,13 +120,13 @@
           </div>
         </section>
       </div>
-      <!-- <section class="detail-description">
+      <section class="detail-description">
         <img
           src="https://media.graphassets.com/J1Er2Nm5QH2vVVoAJTyK"
           alt="상품 상세 이미지"
           class="detail-image"
         />
-      </section> -->
+      </section>
     </main>
     <footer>AMAZING MARKET ⓒ 2024</footer>
     <script>
@@ -120,46 +134,43 @@
       const btnPrev = document.querySelector(".carousel-button.prev");
       const btnNext = document.querySelector(".carousel-button.next");
 
+      let currentIndex = 0;
+      const lastIndex = carousel.childElementCount;
       let isThrottled = false;
       const throttleDuration = 500;
 
-      let currentIndex = 0;
-      btnPrev.style.display = currentIndex === 0 ? "none" : "block";
-      btnNext.style.display = currentIndex === 2 ? "none" : "block";
+      document.addEventListener("DOMContentLoaded", () => {
+        updateVisibilityOfSlideButtons(currentIndex);
+      });
 
-      btnNext.addEventListener("click", () => {
-        setTimeout(() => {
-          isThrottled = false;
-        }, 500);
-
+      function moveCarousel(offset) {
         if (isThrottled) return;
         isThrottled = true;
 
         carousel.scrollBy({
-          left: carousel.clientWidth,
+          left: offset * carousel.clientWidth,
           behavior: "smooth",
         });
-        currentIndex += 1;
-        btnPrev.style.display = currentIndex === 0 ? "none" : "block";
-        btnNext.style.display = currentIndex === 2 ? "none" : "block";
-      });
 
-      btnPrev.addEventListener("click", () => {
+        currentIndex += offset;
+        updateVisibilityOfSlideButtons(currentIndex);
+
         setTimeout(() => {
           isThrottled = false;
         }, throttleDuration);
+      }
 
-        if (isThrottled) return;
-        isThrottled = true;
-
-        carousel.scrollBy({
-          left: -carousel.clientWidth,
-          behavior: "smooth",
-        });
-        currentIndex -= 1;
-        btnPrev.style.display = currentIndex === 0 ? "none" : "block";
-        btnNext.style.display = currentIndex === 3 ? "none" : "block";
+      btnPrev.addEventListener("click", () => {
+        moveCarousel(-1);
       });
+      btnNext.addEventListener("click", () => {
+        moveCarousel(1);
+      });
+
+      function updateVisibilityOfSlideButtons(currentIndex) {
+        btnPrev.style.display = currentIndex === 0 ? "none" : "block";
+        btnNext.style.display = currentIndex === lastIndex ? "none" : "block";
+      }
     </script>
   </body>
 </html>
