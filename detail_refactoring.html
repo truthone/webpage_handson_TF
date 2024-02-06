@@ -25,7 +25,7 @@
       }
 
       .carousel-container {
-        position: relative;
+        position: sticky;
       }
 
       .carousel-button {
@@ -37,10 +37,6 @@
         font-size: 40px;
         background: rgba(240, 240, 240, 0.5);
         color: rgb(60, 72, 107);
-      }
-
-      .carousel-container {
-        position: relative;
       }
 
       .carousel-button.next {
@@ -123,36 +119,38 @@
       let isThrottled = false;
       const throttleDuration = 500;
 
-      let currentIndex = 0;
-      updateVisibilityOfSlideButtons(currentIndex);
+      let currentIndex = 1;
 
-      btnNext.addEventListener("click", () => {
-        moveCarousel(1);
+      document.addEventListener("DOMContentLoaded", () => {
+        const lastIndex = carousel.childElementCount;
+        updateVisibilityOfSlideButtons(currentIndex, lastIndex);
+
+        btnNext.addEventListener("click", () => {
+          moveCarousel(1, lastIndex);
+        });
+
+        btnPrev.addEventListener("click", () => {
+          moveCarousel(-1, lastIndex);
+        });
       });
-
-      btnPrev.addEventListener("click", () => {
-        moveCarousel(-1);
-      });
-
-      function updateVisibilityOfSlideButtons(currentIndex) {
-        btnPrev.style.display = currentIndex === 0 ? "none" : "block";
+      function updateVisibilityOfSlideButtons(currentIndex, lastIndex) {
+        btnPrev.style.display = currentIndex === 1 ? "none" : "block";
         btnNext.style.display = currentIndex === lastIndex ? "none" : "block";
       }
 
-      function moveCarousel(offset) {
+      function moveCarousel(offset, lastIndex) {
         setTimeout(() => {
           isThrottled = false;
         }, throttleDuration);
 
         if (isThrottled) return;
         isThrottled = true;
-
         carousel.scrollBy({
           left: offset * carousel.clientWidth,
           behavior: "smooth",
         });
         currentIndex += offset;
-        updateVisibilityOfSlideButtons(currentIndex);
+        updateVisibilityOfSlideButtons(currentIndex, lastIndex);
       }
     </script>
   </body>
