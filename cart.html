@@ -12,7 +12,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./global.css" />
-    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./index_udpated.css" />
     <link rel="stylesheet" href="./cart.css" />
     <style>
       #cart-table {
@@ -59,7 +59,7 @@
       <section id="summary">
         <span id="amount"></span>
         <span>/</span>
-        <span id="sum"></span>
+        <span id="sum"></span>원
       </section>
     </main>
     <footer>AMAZING MARKET ⓒ 2024</footer>
@@ -92,7 +92,9 @@
                 <div class="saled-price">${item.discountPrice.toLocaleString()}원</div>
               </td>
               <td>${item.quantity}</td>
-              <td>${(item.discountPrice * item.quantity).toLocaleString()}원</td>
+              <td>${(
+                item.discountPrice * item.quantity
+              ).toLocaleString()}원</td>
               <td>
                 <button class="remove-button" data-id="${item.productId}">
                   삭제
@@ -107,15 +109,14 @@
 
       function renderSum() {
         const sum = cart.reduce(
-          (acc, item) => acc + item.discountPrice * item.quantity, 
+          (acc, item) => acc + item.discountPrice * item.quantity,
           0
         );
-        const amount = cart.reduce(
-          (acc, item) => acc + item.quantity, 
-          0
-        );
+        const amount = cart.reduce((acc, item) => acc + item.quantity, 0);
         document.getElementById("amount").innerHTML = `총수량: ${amount}`;
-        document.getElementById("sum").innerHTML = `총합계: ${sum.toLocaleString()}`;
+        document.getElementById(
+          "sum"
+        ).innerHTML = `총합계: ${sum.toLocaleString()}`;
       }
 
       function removeFromCart(productId) {
